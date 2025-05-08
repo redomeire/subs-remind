@@ -1,0 +1,12 @@
+<header>
+  <h1>Syakalala</h1>
+  <ul>
+    @for (item of headerList; track item.link) {
+      <li>
+        <a [routerLink]="item.link" routerLinkActive="active">
+          {{ item.name }}
+        </a>
+      </li>
+    }
+  </ul>
+</header>
