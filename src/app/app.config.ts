@@ -1,12 +1,12 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
-import Aura from '@primeng/themes/aura';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAuth0 } from '@auth0/auth0-angular';
 import { environment } from '../environments/environment.development';
+import { Noir } from '../styles/theme/preset';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,7 +22,10 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
-        preset: Aura
+        preset: Noir,
+        options: {
+          darkModeSelector: '.my-app-dark'
+        }
       }
     })
   ],

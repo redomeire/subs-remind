@@ -1,1 +1,51 @@
-<p>home works!</p>
+<main>
+  <section id="hero">
+    <div class="relative w-full h-[400px]">
+      <img
+        ngSrc="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        fill
+        style="object-fit: cover"
+        priority
+      />
+      <div class="bg-black opacity-40 absolute inset-0 z-20"></div>
+    </div>
+  </section>
+  <section class="p-5 px-10">
+    <article class="grid md:grid-cols-2 gap-10 items-center">
+      <h1 class="font-bold text-4xl leading-14">
+        Stay on top of your <br />
+        subscriptions effortlessly🔥
+      </h1>
+      <div>
+        <p class="leading-8 text-lg">
+          SubsRemind helps you track all your online subscriptions in one place.
+          Get timely reminders before your payments are due, so you never miss a
+          beat.
+        </p>
+        <div class="button-group mt-5 space-x-2">
+          <p-button>Get Started</p-button>
+          <p-button severity="contrast" variant="outlined">Learn More</p-button>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="mt-20 p-5 px-10">
+    <div class="space-y-4">
+      <h6 class="text-lg font-bold text-center">track</h6>
+      <h2 class="text-4xl font-bold text-center">
+        Stay on Top of Subscriptions
+      </h2>
+      <p class="text-center text-lg">
+        effortlessly manage your subscriptions and expenses
+      </p>
+    </div>
+    <article class="mt-14">
+      <div class="grid md:grid-cols-3 gap-3">
+        <app-track-card
+          *ngFor="let trackCard of trackCards"
+          [trackCard]="trackCard"
+        ></app-track-card>
+      </div>
+    </article>
+  </section>
+</main>

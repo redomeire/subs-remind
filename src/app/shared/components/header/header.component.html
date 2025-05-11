@@ -1,12 +1,57 @@
-<header>
-  <h1>Syakalala</h1>
-  <ul>
-    @for (item of headerList; track item.link) {
-      <li>
-        <a [routerLink]="item.link" routerLinkActive="active">
-          {{ item.name }}
+<div class="card">
+  <p-menubar [model]="headerList">
+    <ng-template #item let-item>
+      <ng-container *ngIf="item.route; else urlRef">
+        <a [routerLink]="item.route" class="p-menubar-item-link">
+          <span [class]="item.icon"></span>
+          <span class="ml-2">{{ item.label }}</span>
         </a>
-      </li>
-    }
-  </ul>
-</header>
+      </ng-container>
+      <ng-template #urlRef>
+        <a
+          *ngIf="item.url; else noLink"
+          [href]="item.url"
+          class="p-menubar-item-link"
+        >
+          <span [class]="item.icon"></span>
+          <span class="ml-2">{{ item.label }}</span>
+        </a>
+      </ng-template>
+      <ng-template #noLink>
+        <div class="p-menubar-item-link">
+          <span [class]="item.icon"></span>
+          <span class="ml-2">{{ item.label }}</span>
+          <span *ngIf="item.items" class="pi pi-fw pi-angle-down ml-2"></span>
+        </div>
+      </ng-template>
+    </ng-template>
+    <ng-template #start>
+      <div class="flex items-center gap-2">
+        <a [routerLink]="'/'">
+          <img
+            *ngIf="!darkMode()"
+            src="/images/subsremind-logo.png"
+            class="mr-5"
+            width="100"
+          />
+          <img
+            *ngIf="darkMode()"
+            src="/images/subsremind-logo-black.png"
+            class="mr-5"
+            width="100"
+          />
+        </a>
+      </div>
+    </ng-template>
+    <ng-template #end>
+      <div class="flex items-center gap-2">
+        <p-avatar
+          image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+          shape="circle"
+          size="large"
+          class="mr-5"
+        />
+      </div>
+    </ng-template>
+  </p-menubar>
+</div>

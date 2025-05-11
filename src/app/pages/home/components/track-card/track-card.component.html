@@ -1,0 +1,29 @@
+<p-card [style]="{ overflow: 'hidden' }" class="md:w-[24rem] w-full">
+  <ng-template #title> {{ trackCard().title }} </ng-template>
+  <ng-template #subtitle> {{ trackCard().label }} </ng-template>
+  <ng-template #content>
+    <p>
+      {{ trackCard().description }}
+    </p>
+  </ng-template>
+  <ng-template #footer>
+    <div class="flex gap-4 mt-5">
+      <p-button
+        label="{{ trackCard().buttonLabel }}"
+        class="w-full"
+        styleClass="w-full"
+        variant="outlined"
+        severity="contrast"
+        icon="pi pi-chevron-right"
+        iconPos="right"
+      ></p-button>
+    </div>
+  </ng-template>
+  <ng-template #header>
+    <img
+      alt="Card"
+      class="w-full"
+      src="https://primefaces.org/cdn/primeng/images/card-ng.jpg"
+    />
+  </ng-template>
+</p-card>
