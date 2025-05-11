@@ -2,7 +2,7 @@
   <section id="hero">
     <div class="relative w-full h-[400px]">
       <img
-        ngSrc="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ngSrc="/images/home/hero.jpg"
         fill
         style="object-fit: cover"
         priority
@@ -47,5 +47,27 @@
         ></app-track-card>
       </div>
     </article>
+  </section>
+  <section class="p-5 px-10 mt-20">
+    <article class="grid md:grid-cols-2 gap-10 items-center">
+      <h1 class="font-bold text-4xl leading-14">
+        Discover how SubsRemind simplifies managing your subscriptions
+        effortlessly
+      </h1>
+      <div>
+        <p class="leading-8 text-lg">
+          SubsRemind is designed to help you keep track of all your
+          subscriptions in one place. With easy-to-use features, you can add,
+          edit, and delete subscriptions as needed. Plus, receive timely
+          reminders before your payment due dates to avoid any surprises.
+        </p>
+      </div>
+    </article>
+    <div class="mt-20 grid md:grid-cols-3 md:gap-2 gap-10">
+      <app-purpose-card
+        *ngFor="let purposeCard of purposeCards"
+        [purposeCard]="purposeCard"
+      ></app-purpose-card>
+    </div>
   </section>
 </main>

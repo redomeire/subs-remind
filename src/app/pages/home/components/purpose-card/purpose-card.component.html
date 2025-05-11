@@ -1,0 +1,14 @@
+<div class="min-w-[24rem] md:w-fit w-full">
+  <i class="pi pi-box" style="font-size: 1.7rem"></i>
+  <h4 class="text-[23px] font-bold mt-2">
+    {{ purposeCard().title }}
+  </h4>
+  <p class="mt-2 mb-4">{{ purposeCard().description }}</p>
+  <p-button
+    label="{{ purposeCard().button.label }}"
+    icon="pi pi-chevron-right"
+    iconPos="right"
+    variant="outlined"
+    (click)="purposeCard().button.action()"
+  ></p-button>
+</div>
