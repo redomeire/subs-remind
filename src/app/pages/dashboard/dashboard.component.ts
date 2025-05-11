@@ -5,7 +5,7 @@ import { SocialButtonComponent } from '../../modules/auth/components/social-butt
   selector: 'app-dashboard',
   imports: [SocialButtonComponent],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
 

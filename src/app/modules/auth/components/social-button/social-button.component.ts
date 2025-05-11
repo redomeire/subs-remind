@@ -11,7 +11,7 @@ import { AuthService } from '@auth0/auth0-angular';
     },
   ],
   templateUrl: './social-button.component.html',
-  styleUrl: './social-button.component.scss',
+  styleUrl: './social-button.component.css',
 })
 export class SocialButtonComponent {
   constructor(

@@ -7,7 +7,7 @@ import { SocialButtonComponent } from "../social-button/social-button.component"
   standalone: true,
   imports: [CommonModule, SocialButtonComponent],
   templateUrl: './auth-form.component.html',
-  styleUrl: './auth-form.component.scss'
+  styleUrl: './auth-form.component.css'
 })
 export class AuthFormComponent {
   formType = input<'login' | 'register'>('login');
