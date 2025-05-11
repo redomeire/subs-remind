@@ -4,6 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { TrackCardComponent } from './components/track-card/track-card.component';
 import { PurposeCardComponent } from './components/purpose-card/purpose-card.component';
 import { Router } from '@angular/router';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
     TrackCardComponent,
     NgFor,
     PurposeCardComponent,
+    FooterComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
