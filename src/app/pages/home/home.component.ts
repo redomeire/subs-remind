@@ -5,6 +5,7 @@ import { TrackCardComponent } from './components/track-card/track-card.component
 import { PurposeCardComponent } from './components/purpose-card/purpose-card.component';
 import { Router } from '@angular/router';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { HeaderComponent } from '../../shared/components/header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
     NgFor,
     PurposeCardComponent,
     FooterComponent,
+    HeaderComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

@@ -1,0 +1,81 @@
+<p-drawer
+  [(visible)]="visible"
+  [closable]="false"
+  [dismissible]="false"
+  [modal]="false"
+  styleClass="w-64!"
+>
+  <ng-template #header>
+    <div class="flex items-center gap-2">
+      <p-avatar
+        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+        shape="circle"
+      />
+      <span class="font-bold">Amy Elsner</span>
+    </div>
+  </ng-template>
+  <p-accordion value="0">
+    <p-accordion-panel value="0">
+      <p-accordion-header>
+        <p>OVERVIEW</p>
+      </p-accordion-header>
+      <p-accordion-content>
+        <a href="/dashboard">
+          <i class="pi pi-fw pi-home"></i>
+          <span class="ml-2 text-sm">Dashboard</span>
+        </a>
+      </p-accordion-content>
+      <p-accordion-content>
+        <a href="/dashboard/subscription/add">
+          <i class="pi pi-fw pi-bookmark"></i>
+          <span class="ml-2 text-sm">Bookmark</span>
+        </a>
+      </p-accordion-content>
+      <p-accordion-content>
+        <a href="/dashboard/subscription/add">
+          <i class="pi pi-fw pi-plus"></i>
+          <span class="ml-2 text-sm">Add Subscription</span>
+        </a>
+      </p-accordion-content>
+    </p-accordion-panel>
+  </p-accordion>
+  <p-accordion value="1">
+    <p-accordion-panel value="0">
+      <p-accordion-header>
+        <p>SETTINGS</p>
+      </p-accordion-header>
+      <p-accordion-content>
+        <a href="/dashboard/settings">
+          <i class="pi pi-fw pi-cog"></i>
+          <span class="ml-2 text-sm">Reminder Settings</span>
+        </a>
+      </p-accordion-content>
+      <p-accordion-content>
+        <a href="/dashboard/subscription/add">
+          <i class="pi pi-fw pi-user"></i>
+          <span class="ml-2 text-sm">Account Profile</span>
+        </a>
+      </p-accordion-content>
+      <p-accordion-content>
+        <div class="cursor-pointer">
+          <i class="pi pi-fw pi-sun"></i>
+          <span class="ml-2 text-sm">Toggle Dark Mode</span>
+        </div>
+      </p-accordion-content>
+    </p-accordion-panel>
+  </p-accordion>
+  <ng-template #footer>
+    <div class="flex items-center gap-2">
+      <button
+        pButton
+        label="Logout"
+        icon="pi pi-sign-out"
+        class="w-full"
+        severity="danger"
+        text
+        (click)="authService.logout()"
+      ></button>
+    </div>
+  </ng-template>
+</p-drawer>
+<button pButton (click)="visible = true" icon="pi pi-plus"></button>
