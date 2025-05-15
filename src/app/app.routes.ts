@@ -28,10 +28,27 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadComponent: () =>
-      import('./pages/dashboard/dashboard.component').then(
-        (m) => m.DashboardComponent
-      ),
     canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/dashboard/dashboard.component').then(
+            (m) => m.DashboardComponent
+          ),
+      },
+      {
+        path: 'subscription',
+        children: [
+          {
+            path: 'add',
+            loadComponent: () =>
+              import(
+                './pages/dashboard/subscription/add/add.component'
+              ).then((m) => m.AddComponent),
+          }
+        ],
+      }
+    ]
   }
 ];
