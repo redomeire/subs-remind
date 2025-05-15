@@ -1,9 +1,17 @@
 <div class="flex items-start">
   <app-sidebar></app-sidebar>
-  <main class="md:ml-56 p-5">
-    <h1 class="font-medium text-3xl">
-      <ng-container *ngTemplateOutlet="pageTitle"></ng-container>
-    </h1>
+  <main class="md:ml-[12rem] p-5 w-full bg-violet-50 min-h-screen">
+    <div>
+      <h1 class="font-medium text-2xl">
+        <ng-container *ngTemplateOutlet="pageTitle"></ng-container>
+      </h1>
+      <p class="mt-1">
+        <ng-container
+          *ngTemplateOutlet="pageDescription"
+          class="mt-5"
+        ></ng-container>
+      </p>
+    </div>
     <ng-container *ngTemplateOutlet="pageContent"></ng-container>
   </main>
 </div>

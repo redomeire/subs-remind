@@ -11,6 +11,8 @@ import { NgTemplateOutlet } from '@angular/common';
 export class DashboardComponent {
   @ContentChild('pageTitle', { read: TemplateRef })
   pageTitle!: TemplateRef<unknown> | null;
+  @ContentChild('pageDescription', { read: TemplateRef })
+  pageDescription!: TemplateRef<unknown> | null;
   @ContentChild('pageContent', { read: TemplateRef })
   pageContent!: TemplateRef<unknown> | null;
 }

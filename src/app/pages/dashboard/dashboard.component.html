@@ -1,8 +1,115 @@
 <app-dashboard-layout>
-  <ng-template #pageTitle> This is page title </ng-template>
+  <ng-template #pageTitle> Welcome back, {{ profile?.nickname }} </ng-template>
+  <ng-template #pageDescription>
+    Here's what's happening with your projects today
+  </ng-template>
   <ng-template #pageContent>
-    <section class="mt-10">
-      
-    </section>
+    <article class="mt-10 grid md:grid-cols-1 w-full gap-3">
+      <div class="">
+        <section class="grid grid-cols-2 gap-3">
+          <p-card>
+            <div class="flex justify-between">
+              <div class="flex items-center gap-3">
+                <p-button
+                  styleClass="bg-violet-800 text-white border-transparent dark:bg-white dark:text-black p-3"
+                >
+                  <i class="pi pi-arrow-down-left"></i>
+                </p-button>
+                <div>
+                  <p class="text-violet-800 font-medium">Monthly Value</p>
+                  <p class="text-violet-800 text-xl font-medium">$300.0</p>
+                </div>
+              </div>
+              <div class="flex flex-col justify-end">
+                <p-tag value="New" severity="success" value="+1.29%" />
+              </div>
+            </div>
+          </p-card>
+          <p-card>
+            <div class="flex justify-between">
+              <div class="flex items-center gap-3">
+                <p-button
+                  styleClass="bg-blue-500 text-white border-transparent dark:bg-white dark:text-black p-3"
+                >
+                  <i class="pi pi-arrow-up-right"></i>
+                </p-button>
+                <div>
+                  <p class="text-violet-800 font-medium">Single Payments</p>
+                  <p class="text-violet-800 text-xl font-medium">$622.0</p>
+                </div>
+              </div>
+              <div class="flex flex-col justify-end">
+                <p-tag value="New" severity="danger" value="+1.29%" />
+              </div>
+            </div>
+          </p-card>
+        </section>
+        <section class="mt-3">
+          <p-card header="Analytics" styleClass="min-h-[300px]">
+            <div class="card">
+              <p-chart type="bar" [data]="tableConfig.basicData" [options]="tableConfig.basicOptions" />
+            </div>
+          </p-card>
+        </section>
+        <section class="mt-3">
+          <p-card styleClass="min-h-[300px]">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold">Showing All</h3>
+              <p-select
+                [options]="timeRanges"
+                [(ngModel)]="selectedTimeRange"
+                optionLabel="name"
+                placeholder="Select a Time Range"
+              ></p-select>
+            </div>
+            <div class="card">
+              <p-table
+                [value]="subscriptionItems"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                styleClass="mt-5"
+              >
+                <ng-template #header>
+                  <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </ng-template>
+                <ng-template #body let-subscriptionItem>
+                  <tr>
+                    <td class="flex items-center gap-3">
+                      <img
+                        src="{{ subscriptionItem.logoUrl }}"
+                        width="40"
+                        height="40"
+                        alt="{{ subscriptionItem.name }}"
+                      />
+                      <span class="font-semibold">
+                        {{ subscriptionItem.name }}
+                      </span>
+                    </td>
+                    <td>{{ subscriptionItem.created_at }}</td>
+                    <td>Rp {{ subscriptionItem.amount }},00</td>
+                    <td>
+                      <p-button
+                        label="{{ subscriptionItem.status }}"
+                        [severity]="
+                          subscriptionItem.status === 'paid'
+                            ? 'success'
+                            : 'danger'
+                        "
+                        styleClass="p-button-sm"
+                      ></p-button>
+                    </td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+          </p-card>
+        </section>
+      </div>
+      <!-- <aside class="bg-white rounded-xl col-span-2"></aside> -->
+    </article>
   </ng-template>
 </app-dashboard-layout>
